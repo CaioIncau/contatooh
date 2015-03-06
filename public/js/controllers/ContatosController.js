@@ -1,5 +1,5 @@
 angular.module('contatooh').controller('ContatosController',
-  function($scope) {
+  function($scope,$http) {
   		$scope.contatos  = [
     	  {
 	        "_id": 1,
@@ -15,7 +15,18 @@ angular.module('contatooh').controller('ContatosController',
 	        "email": "cont3@empresa.com.br"
 		} ];
   	  	$scope.total = 0;
+  	  	$scope.filtro = '';
   	  	$scope.incrementa = function() {
       		$scope.total++;
     	};
+    	
+    	$http.get('/contatos')
+        .success(function(data) {
+            $scope.contatos = data;
+        })
+        .error(function(statusText) {
+            console.log("Não foi possível obter a lista de contatos");
+            console.log(statusText);
+});
+
 });
