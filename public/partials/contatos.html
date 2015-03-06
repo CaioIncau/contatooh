@@ -1,3 +1,17 @@
 <h1>Bem-vindo ao Contatooh</h1>
 <button ng-click="incrementa()">Novo</button>
 <p>Contatos cadastrados: {{total}}</p>
+
+<table class="table">
+  <tr ng-repeat="contato in contatos">
+    <td>
+      <a>{{contato.nome}}</a>
+    </td>
+    <td>{{contato.email}}</td>
+    <td class="text-center">
+      <button class="btn btn-warning">
+        Remover
+      </buttom>
+    </td>
+</tr>
+</table>
