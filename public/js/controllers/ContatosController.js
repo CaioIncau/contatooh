@@ -18,7 +18,7 @@ angular.module('contatooh').controller('ContatosController',
   	  	$scope.filtro = '';
   	  	$scope.incrementa = function() {
       		$scope.total++;
-    	};G
+    	};
     	
     	$http.get('/contatos')
         .success(function(data) {
