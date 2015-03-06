@@ -20,16 +20,24 @@ angular.module('contatooh').controller('ContatosController',
       		$scope.total++;
     	};
     	
-    	var Contato = $resource('/contatos/:id');
 
-   		 Contato.query(
-	        function(contatos) {
-	          $scope.contatos = contatos;
-	        },
-	        function(erro) {
-	           console.log("Nao foi possivel obter a lista de contatos");
-	           console.log(erro);
-		} );
+
+    	var Contato = $resource('/contatos/:id');
+ 		function buscaContatos() {
+	   		 Contato.query(
+		        function(contatos) {
+		          $scope.contatos = contatos;
+		        },
+		        function(erro) {
+		           console.log("Nao foi possivel obter a lista de contatos");
+		           console.log(erro);
+			} );
+	   	};
+	   	buscaContatos();
+
+	   	$scope.remove = function(contato) {
+		    console.log(contato);
+		};
     	
 
 });
