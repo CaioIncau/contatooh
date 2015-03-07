@@ -16,6 +16,12 @@
 		            <input type="email" class="form-control" id="email"
 		            placeholder="email@exemplo.com" name="email"
 		            ng-model="contato.email" required>
+               <label for="emergencia">Emergência</label>
+              <select id="emergencia"
+                      class="form-control"
+                      ng-model="contato.emergencia"
+                      ng-options="contato._id as contato.nome for contato in contatos">
+              </select>
 		        </div>
 		    </div>
 		<div>

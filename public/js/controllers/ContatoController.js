@@ -18,5 +18,9 @@ angular.module('contatooh').controller('ContatoController',
 	$scope.salva = function() {
 		$scope.contato.$save();
 	};
+  
+  Contato.query(function(contatos) {
+      $scope.contatos = contatos;
+   });
 
 });

@@ -2,7 +2,7 @@ module.exports = function (app) {
   var Contato = app.models.contato;
   var controller = {};
   controller.listaContatos = function(req, res) {
-    var promise = Contato.find().exec();
+    var promise = Contato.find().populate('emergencia').exec();
     promise.then(
       function(contatos) {
         res.json(contatos);
@@ -38,6 +38,32 @@ module.exports = function (app) {
           }
        );
   };
-  controller.salvaContato = function(req, res) {};
+
+  controller.salvaContato = function(req, res) {
+    var _id = req.body._id;
+    req.body.emergencia = req.body.emergencia || null;
+    if(_id) {
+     Contato.findByIdAndUpdate(_id, req.body).exec()
+       .then(
+        function(contato) {
+          res.json(contato);
+        },
+        function(erro) {
+          console.error(erro);
+          res.status(500).json(erro);
+        }
+    );
+    } else {
+      Contato.create(req.body)
+      .then(
+        function(contato) {
+          res.status(201).json(contato);
+        },
+        function(erro) {
+          console.log(erro);res.status(500).json(erro);
+        }
+      );
+    }
+  };
   return controller;
 };
