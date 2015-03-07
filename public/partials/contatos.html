@@ -1,8 +1,13 @@
 <h1>Bem-vindo ao Contatooh</h1>
 <button ng-click="incrementa()">Novo</button>
 <input ng-model="filtro" type="search" placeholder="parte do nome">
-<p>Contatos cadastrados: {{contatos.length}}</p>
 
+
+	<p ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
+
+	<p class="text-info" ng-hide="contatos.length">
+	    Não há contatos cadastrados
+	</p>
 <table class="table">
   <tr ng-repeat="contato in contatos | filter: filtro">
     <td>
