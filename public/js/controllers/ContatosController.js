@@ -1,5 +1,5 @@
 angular.module('contatooh').controller('ContatosController',
-  function($scope,$resource) {
+  function($scope,Contato) {
   		$scope.contatos  = [
     	  {
 	        "_id": 1,
@@ -22,7 +22,6 @@ angular.module('contatooh').controller('ContatosController',
     	
 
 
-    	var Contato = $resource('/contatos/:id');
  		function buscaContatos() {
 	   		 Contato.query(
 		        function(contatos) {
