@@ -1,5 +1,5 @@
 <h1>Bem-vindo ao Contatooh</h1>
-<button ng-click="incrementa()">Novo</button>
+<a ng-href="#/contato" class="btn btn-primary">Novo Contato</a>
 <input ng-model="filtro" type="search" placeholder="parte do nome">
 
 
@@ -11,7 +11,7 @@
 <table class="table">
   <tr ng-repeat="contato in contatos | filter: filtro">
     <td>
-      <a>{{contato.nome}}</a>
+      <a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a>
     </td>
     <td>{{contato.email}}</td>
     <td class="text-center">
