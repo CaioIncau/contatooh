@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'js-bson', '--save' ]
+2 info using npm@1.3.24
+3 info using node@v0.10.25
+4 warn package.json contatooh@0.0.0 No description
+5 warn package.json contatooh@0.0.0 No repository field.
+6 warn package.json contatooh@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'js-bson', null ]
+9 verbose cache add name=undefined spec="js-bson" args=["js-bson",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'js-bson',
+10 verbose parsed url   path: 'js-bson',
+10 verbose parsed url   href: 'js-bson' }
+11 silly lockFile 39987484-js-bson js-bson
+12 verbose lock js-bson /Users/caioincau/.npm/39987484-js-bson.lock
+13 silly lockFile 39987484-js-bson js-bson
+14 silly lockFile 39987484-js-bson js-bson
+15 verbose addNamed [ 'js-bson', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile a5c0f890-js-bson js-bson@
+18 verbose lock js-bson@ /Users/caioincau/.npm/a5c0f890-js-bson.lock
+19 silly addNameRange { name: 'js-bson', range: '*', hasData: false }
+20 verbose url raw js-bson
+21 verbose url resolving [ 'https://registry.npmjs.org/', './js-bson' ]
+22 verbose url resolved https://registry.npmjs.org/js-bson
+23 info trying registry request attempt 1 at 10:39:20
+24 http GET https://registry.npmjs.org/js-bson
+25 http 404 https://registry.npmjs.org/js-bson
+26 silly registry.get cb [ 404,
+26 silly registry.get   { date: 'Sun, 08 Mar 2015 13:39:22 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=0',
+26 silly registry.get     'content-length': '52',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-jfk1023-JFK',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1425821962.113020,VS0,VE85',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly lockFile a5c0f890-js-bson js-bson@
+28 silly lockFile a5c0f890-js-bson js-bson@
+29 error 404 'js-bson' is not in the npm registry.
+29 error 404 You should bug the author to publish it
+29 error 404 It was specified as a dependency of 'contatooh'
+29 error 404
+29 error 404 Note that you can also install from a
+29 error 404 tarball, folder, or http url, or git url.
+30 error System Darwin 13.3.0
+31 error command "node" "/usr/local/bin/npm" "install" "js-bson" "--save"
+32 error cwd /Users/caioincau/Documents/contatooh
+33 error node -v v0.10.25
+34 error npm -v 1.3.24
+35 error code E404
+36 verbose exit [ 1, true ]
