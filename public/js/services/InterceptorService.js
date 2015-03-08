@@ -6,6 +6,7 @@ angular.module('contatooh').factory('meuInterceptor', function($q,$location) {
               $location.path('/auth');
 			}
             return $q.reject(resposta);
+		}
 	}
     return meuInterceptor;
 });
