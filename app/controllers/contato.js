@@ -1,3 +1,13 @@
+var sanitize = require('mongo-sanitize');
+function extraiContato(req){
+  var dados = {
+      "nome" : req.body.nome,
+      "email" : req.body.email,
+      "emergencia" : req.body.emergencia || null
+  };
+  return dados;
+}
+
 module.exports = function (app) {
   var Contato = app.models.contato;
   var controller = {};
@@ -27,7 +37,7 @@ module.exports = function (app) {
        );
   };
   controller.removeContato = function(req, res) {
-    var _id = req.params.id;
+    var _id = sanitize(req.params.id);
     Contato.remove({"_id" : _id}).exec()
       .then(
         function() {
@@ -41,10 +51,9 @@ module.exports = function (app) {
 
   controller.salvaContato = function(req, res) {
     var _id = req.body._id;
-    console.log(req.body.emergencia);
     req.body.emergencia = req.body.emergencia || null;
     if(_id) {
-     Contato.findByIdAndUpdate(_id, req.body).exec()
+     Contato.findByIdAndUpdate(_id, extraiContato(req)).exec()
        .then(
         function(contato) {
           console.log(contato.emergencia);
@@ -56,7 +65,7 @@ module.exports = function (app) {
         }
     );
     } else {
-      Contato.create(req.body)
+      Contato.create(extraiContato(req))
       .then(
         function(contato) {
           res.status(201).json(contato);
